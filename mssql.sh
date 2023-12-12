@@ -12,11 +12,11 @@ apt-get install -y mssql-server
 
 curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | tee /etc/apt/sources.list.d/mssql-release.list
 apt-get update
-#ACCEPT_EULA=Y apt-get -y install mssql-tools18 unixodbc-dev
+ACCEPT_EULA=Y apt-get -y install mssql-tools18 unixodbc-dev
 
 echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
-source ~/.bashrc
+#source ~/.bashrc
 
-#MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PAID=$MSSQL_PAID /opt/mssql/bin/mssql-conf -n setup accept-eula
+MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PAID=$MSSQL_PAID /opt/mssql/bin/mssql-conf -n setup accept-eula
 
