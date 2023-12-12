@@ -18,5 +18,5 @@ echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
 #source ~/.bashrc
 
-MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PAID=$MSSQL_PAID /opt/mssql/bin/mssql-conf -n setup accept-eula
+#MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PAID=$MSSQL_PAID /opt/mssql/bin/mssql-conf -n setup accept-eula
 
