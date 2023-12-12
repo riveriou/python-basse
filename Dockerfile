@@ -1,4 +1,4 @@
-FROM python:latest
+FROM ubuntu:22.04
 MAINTAINER River riou
 
 ENV DEBIAN_FRONTEND noninteractive
