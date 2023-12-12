@@ -22,7 +22,7 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Taipei /etc/localtime && echo Asia/Taipei >
 RUN apt-get update
 RUN apt-get update --fix-missing
 RUN apt-get install -y curl wget vim nano lsof net-tools dialog software-properties-common less unzip gpg-agent less unzip apt-utils
-RUN apt-get install -y openssh-server supervisor
+RUN apt-get install -y openssh-server supervisor python3 python3-pip
 #RUN apt-get install -y libldap-2.4-2 locales
 
 WORKDIR /data
@@ -31,7 +31,7 @@ RUN chmod 755 /data/*
 #RUN /data/mssql.sh
 #RUN /data/flask.sh
 RUN /data/sshd.sh
-RUN /data/python.sh
+#RUN /data/python.sh
 
 RUN rm -r /data/*.sh
 
