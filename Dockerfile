@@ -4,13 +4,6 @@ MAINTAINER River riou
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
-ENV PATH /usr/local/bin:$PATH
-ENV GPG_KEY 7169605F62C751356D054A26A821E680E5FA6305
-ENV PYTHON_VERSION 3.12.1
-ENV PYTHON_PIP_VERSION 23.2.1
-ENV PYTHON_GET_PIP_URL https://github.com/pypa/get-pip/raw/4cfa4081d27285bda1220a62a5ebf5b4bd749cdb/public/get-pip.py
-ENV PYTHON_GET_PIP_SHA256 9cc01665956d22b3bf057ae8287b035827bfd895da235bcea200ab3b811790b6
-
 ENV ACCEPT_EULA Y
 ENV MSSQL_PID standard
 ENV MSSQL_SA_PASSWORD sasa
@@ -29,7 +22,7 @@ WORKDIR /data
 ADD . /data
 RUN chmod 755 /data/*
 #RUN /data/mssql.sh
-#RUN /data/flask.sh
+RUN /data/flask.sh
 RUN /data/sshd.sh
 #RUN /data/python.sh
 
