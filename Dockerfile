@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 ENV ACCEPT_EULA Y
-ENV MSSQL_PAID standard
+ENV MSSQL_PID standard
 ENV MSSQL_SA_PASSWORD !Qazxsw2
 ENV MSSQL_TCP_PORT 1433
 ENV NOTVISIBLE "in users profile"
@@ -26,7 +26,7 @@ RUN /data/flask.sh
 RUN /data/sshd.sh
 RUN /data/mssql.sh
 
-RUN rm -r /data/*.sh
+#RUN rm -r /data/*.sh
 
 RUN echo "[supervisord] " >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "nodaemon=true" >> /etc/supervisor/conf.d/supervisord.conf
