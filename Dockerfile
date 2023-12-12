@@ -5,8 +5,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 ENV ACCEPT_EULA Y
-ENV MSSQL_PID standard
-ENV MSSQL_SA_PASSWORD sasa
+ENV MSSQL_PAID standard
+ENV MSSQL_SA_PASSWORD !Qazxsw2
 ENV MSSQL_TCP_PORT 1433
 ENV NOTVISIBLE "in users profile"
 
@@ -21,10 +21,10 @@ RUN apt-get install -y openssh-server supervisor python3 python3-pip
 WORKDIR /data
 ADD . /data
 RUN chmod 755 /data/*
-#RUN /data/mssql.sh
+
 RUN /data/flask.sh
 RUN /data/sshd.sh
-#RUN /data/python.sh
+RUN /data/mssql.sh
 
 RUN rm -r /data/*.sh
 
@@ -39,7 +39,7 @@ RUN echo "user=root" >> /etc/supervisor/conf.d/supervisord.conf
 #RUN echo 'command=/usr/sbin/sshd -D' >> /etc/supervisor/conf.d/supervisord.conf
 
 RUN echo '#!/bin/sh' >> /startup.sh
-#RUN echo '/opt/mssql/bin/sqlservr' >> /startup.sh
+RUN echo '/opt/mssql/bin/sqlservr' >> /startup.sh
 RUN echo '/usr/sbin/sshd -D' >> /startup.sh
 RUN echo 'python3 /data/app.py' >> /startup.sh
 
