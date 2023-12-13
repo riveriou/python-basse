@@ -39,6 +39,7 @@ RUN echo "user=root" >> /etc/supervisor/conf.d/supervisord.conf
 #RUN echo 'command=/usr/sbin/sshd -D' >> /etc/supervisor/conf.d/supervisord.conf
 
 RUN echo '#!/bin/sh' >> /startup.sh
+RUN echo '#/opt/mssql/bin/sqlservr accept-eula &' >> /startup.sh
 RUN echo '#/opt/mssql/bin/sqlservr &' >> /startup.sh
 RUN echo '/usr/sbin/sshd -D &' >> /startup.sh
 RUN echo '#python3 /data/app.py &' >> /startup.sh
