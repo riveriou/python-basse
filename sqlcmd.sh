@@ -1,2 +1,2 @@
 #!/bin/bash
-sqlcmd -S localhost -U sa -C -P '$MSSQL_SA_PASSWORD'
+sqlcmd -S localhost -U sa -C -P $MSSQL_SA_PASSWORD
